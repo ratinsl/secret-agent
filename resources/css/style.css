@@ -1,75 +1,262 @@
 html {
-  font-size: 18px;
+  color: white;
   font-family: Helvetica;
+  font-size: 18px;
 }
 
-.full-area {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  height: auto;
+h1 {
+  text-transform: uppercase;
+  font-size: 2rem;
+  font-weight: bold;
 }
 
-.site-container {
-  width: 960px;
-  margin: 0;
+h4 {
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-weight: bold;
 }
 
-header {
+/* Top Black Bar */
+
+.header {
+  position: fixed;
+  z-index: 1;
   display: flex;
   align-items: center;
-  height: 3rem;
   width: 100%;
+  text-transform: uppercase;
   background-color: black;
-  color: white;
 }
 
 .logo {
-  padding-left: 0.5rem;
-  padding-right: 1rem;
+  display: flex;
+  align-items: center;
 }
 
 .logo img {
-  height: 1.5rem;
   width: auto;
+  height: 1.5rem;
+  padding-left: .5rem;
+  padding-right: 1rem;
 }
+
+.logo span {
+  padding: .90rem 0;
+}
+
+/* Container */
+
+.container {
+  width: 960px;
+  margin: 0 auto;
+}
+
+/* Hero Image Area */
 
 .hero {
   height: 25rem;
   width: 100%;
   background-image: url("../images/moto.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
-.flex-container {
+.box {
+  padding: 2rem 3rem;
+  background-color: black;
+  width: 20rem;
+  top: 9rem;
+  position: relative;
+}
+
+.box h1 {
+  padding-top: .5rem;
+}
+
+/* Red Navigation Bar */
+
+.nav {
   display: flex;
+  background-color: firebrick;
+}
+
+.nav ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: .75rem 0;
+  list-style: none;
+}
+
+.mobile ul {
+  justify-content: center;
+  text-align: center;
+  display: none;
+}
+
+/* Product & Business Info */
+
+.products {
+  display: flex;
+  justify-content: space-between;
+  margin: 3rem 0 0 0;
+}
+
+.product {
+  width: 30%;
+}
+
+.product-image {
+  border: 4px solid black;
+  padding: 2rem 0;
+  height: 9rem;
+  display: flex;
+  justify-content: center;
   align-items: center;
 }
 
-.arrival {
+.product-image img {
+  max-width: 8rem;
+}
+
+.description {
+  display: block;
   background-color: black;
-  width: 20rem;
-  height: auto;
   color: white;
-  padding: 2rem 3rem;
+  text-align: center;
+  padding: 0.5rem;
 }
 
-.arrival p {
-  padding-bottom: 0.25rem;
-}
+/* Location */
 
-.arrival h1 {
-  font-size: 2rem;
-  font-weight: bold;
-  line-height: 2.25rem;
-}
-
-nav .flex-container ul {
+.information {
   display: flex;
-  justify-content: center;
-  align-items: Center;
-  align-content: space-between;
+  justify-content: space-between;
+  margin-top: 3rem;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  width: 35%;
+}
+
+.info p {
+  color: black;
+}
+
+.text {
+  background-color: black;
   color: white;
-  height: 3rem;
+  padding: 1rem 0 1rem 2rem;
+  margin-bottom: .5rem;
+}
+
+/* Footer */
+footer {
+  display: flex;
+  align-items: center;
+  background-color: black;
   width: 100%;
-  background-color: firebrick;
+  padding: 5rem 0;
+  margin-top: 4rem;
+}
+
+.copyright {
+  text-align: left;
+}
+
+/* Media Queries */
+
+/* Under 1024 */
+@media only screen and (max-width: 1024px) {
+
+  .container {
+    width: 100%;
+  }
+
+  .nav ul {
+    display: none;
+  }
+
+  .mobile ul {
+    display: block;
+  }
+
+  .product {
+    width: 47%;
+  }
+
+  .product.glasses {
+    display: none;
+  }
+
+  .copyright {
+    padding-left: .5rem;
+  }
+
+}
+
+/* Under 470 */
+@media only screen and (max-width: 470px) {
+
+  h1 {
+    font-size: 1rem;
+  }
+
+  h4 {
+    text-transform: uppercase;
+    font-size: .77rem;
+  }
+
+  .box {
+    top: 10rem;
+    padding: 1rem 2rem;
+  }
+
+  .copyright {
+    text-align: center;
+  }
+
+  .information {
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .info {
+    width: 90%;
+  }
+
+  .products {
+    justify-content: center;
+  }
+
+  .product {
+    width: 90%;
+  }
+
+  .product.watch {
+    display: none;
+  }
+
+  .logo {
+    diplay: flex;
+    justify-content: center;
+    padding: 1rem 0;
+  }
+
+  .logo span {
+    display: none;
+  }
+
+  .hero {
+    height: 15rem;
+  }
+
+  .info.location {
+    margin-bottom: 0.5rem;
+  }
+
 }
